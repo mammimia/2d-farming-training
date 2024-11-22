@@ -2,8 +2,8 @@ public delegate void MovementDelegate(float inputX, float inputY,
     MovementState movementState,
     ToolEffect toolEffect,
     ToolAction toolAction,
-    Direction toolDirection,
-    Direction idleDirection);
+    Direction direction
+);
 
 public static class EventHandler
 {
@@ -14,12 +14,11 @@ public static class EventHandler
         MovementState movementState,
         ToolEffect toolEffect,
         ToolAction toolAction,
-        Direction toolDirection,
-        Direction idleDirection)
+        Direction direction)
     {
         if (movementEvent != null)
         {
-            movementEvent(inputX, inputY, movementState, toolEffect, toolAction, toolDirection, idleDirection);
+            movementEvent(inputX, inputY, movementState, toolEffect, toolAction, direction);
         }
     }
 }

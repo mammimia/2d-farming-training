@@ -27,8 +27,7 @@ public class MovementAnimationParameterController : MonoBehaviour
         MovementState movementState,
         ToolEffect toolEffect,
         ToolAction toolAction,
-        Direction toolDirection,
-        Direction idleDirection)
+        Direction direction)
     {
         animator.SetFloat(Settings.InputX, inputX);
         animator.SetFloat(Settings.InputY, inputY);
@@ -41,10 +40,10 @@ public class MovementAnimationParameterController : MonoBehaviour
         // Tool action
         if (movementState == MovementState.UsingTool)
         {
-            SetToolAnimation(Settings.IsUsingTool, toolAction == ToolAction.Using ? toolDirection : Direction.None);
-            SetToolAnimation(Settings.IsLiftingTool, toolAction == ToolAction.Lifting ? toolDirection : Direction.None);
-            SetToolAnimation(Settings.IsPicking, toolAction == ToolAction.Picking ? toolDirection : Direction.None);
-            SetToolAnimation(Settings.IsSwingingTool, toolAction == ToolAction.Swinging ? toolDirection : Direction.None);
+            SetToolAnimation(Settings.IsUsingTool, toolAction == ToolAction.Using ? direction : Direction.None);
+            SetToolAnimation(Settings.IsLiftingTool, toolAction == ToolAction.Lifting ? direction : Direction.None);
+            SetToolAnimation(Settings.IsPicking, toolAction == ToolAction.Picking ? direction : Direction.None);
+            SetToolAnimation(Settings.IsSwingingTool, toolAction == ToolAction.Swinging ? direction : Direction.None);
         }
         else
         {
@@ -55,7 +54,7 @@ public class MovementAnimationParameterController : MonoBehaviour
         }
 
         // Idle direction
-        SetIdleAnimation(movementState == MovementState.Idle ? idleDirection : Direction.None);
+        SetIdleAnimation(movementState == MovementState.Idle ? direction : Direction.None);
     }
 
     private void SetToolAnimation(Settings.DirectionHashes toolHashes, Direction direction)

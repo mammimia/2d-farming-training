@@ -7,8 +7,7 @@ public class PlayerAnimationTest : MonoBehaviour
     public MovementState movementState;
     public ToolEffect toolEffect;
     public ToolAction toolAction;
-    public Direction toolDirection;
-    public Direction idleDirection;
+    public Direction direction;
 
     private void Update()
     {
@@ -17,8 +16,7 @@ public class PlayerAnimationTest : MonoBehaviour
             movementState,
             toolEffect,
             toolAction,
-            toolDirection,
-            idleDirection
+            direction
         );
     }
 }
