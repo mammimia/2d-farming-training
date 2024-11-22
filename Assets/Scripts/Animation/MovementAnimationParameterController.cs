@@ -39,10 +39,20 @@ public class MovementAnimationParameterController : MonoBehaviour
         animator.SetInteger(Settings.ToolEffect, (int)toolEffect);
 
         // Tool action
-        SetToolAnimation(Settings.IsUsingTool, toolAction == ToolAction.Using ? toolDirection : Direction.None);
-        SetToolAnimation(Settings.IsLiftingTool, toolAction == ToolAction.Lifting ? toolDirection : Direction.None);
-        SetToolAnimation(Settings.IsPicking, toolAction == ToolAction.Picking ? toolDirection : Direction.None);
-        SetToolAnimation(Settings.IsSwingingTool, toolAction == ToolAction.Swinging ? toolDirection : Direction.None);
+        if (movementState == MovementState.UsingTool)
+        {
+            SetToolAnimation(Settings.IsUsingTool, toolAction == ToolAction.Using ? toolDirection : Direction.None);
+            SetToolAnimation(Settings.IsLiftingTool, toolAction == ToolAction.Lifting ? toolDirection : Direction.None);
+            SetToolAnimation(Settings.IsPicking, toolAction == ToolAction.Picking ? toolDirection : Direction.None);
+            SetToolAnimation(Settings.IsSwingingTool, toolAction == ToolAction.Swinging ? toolDirection : Direction.None);
+        }
+        else
+        {
+            SetToolAnimation(Settings.IsUsingTool, Direction.None);
+            SetToolAnimation(Settings.IsLiftingTool, Direction.None);
+            SetToolAnimation(Settings.IsPicking, Direction.None);
+            SetToolAnimation(Settings.IsSwingingTool, Direction.None);
+        }
 
         // Idle direction
         SetIdleAnimation(movementState == MovementState.Idle ? idleDirection : Direction.None);

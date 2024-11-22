@@ -9,7 +9,8 @@ public enum MovementState
     Walking,
     Running,
     Idle,
-    Carrying
+    Carrying,
+    UsingTool
 }
 
 public enum ToolAction
