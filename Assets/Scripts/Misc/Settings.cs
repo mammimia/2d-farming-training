@@ -24,6 +24,11 @@ public static class Settings
     // Idle directions
     public static readonly DirectionHashes Idle = new DirectionHashes("idle");
 
+    // Item Fading
+    public static readonly float fadeInDuration = 0.2f;
+    public static readonly float fadeOutDuration = 0.35f;
+    public static readonly float fadeAlpha = 0.45f;
+
     // Helper class for directional hashes
     public class DirectionHashes
     {
