@@ -17,5 +17,10 @@ public class Item : MonoBehaviour
     {
         theSR = GetComponentInChildren<SpriteRenderer>();
         theSR.sprite = itemDetail.itemSprite;
+
+        if (itemDetail.itemType == ItemType.Reapable)
+        {
+            gameObject.AddComponent<ItemNudge>();
+        }
     }
 }

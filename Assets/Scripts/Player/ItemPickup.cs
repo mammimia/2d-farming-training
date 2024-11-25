@@ -6,7 +6,7 @@ public class ItemPickup : MonoBehaviour
     {
         Item item = other.GetComponent<Item>();
 
-        if (!item) return;
+        if (!item || !item.ItemDetail.canPickedUp) return;
 
         InventoryManager.Instance.addItem(item.ItemDetail);
         Destroy(item.gameObject);
