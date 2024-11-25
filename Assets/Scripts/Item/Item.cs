@@ -18,11 +18,4 @@ public class Item : MonoBehaviour
         theSR = GetComponentInChildren<SpriteRenderer>();
         theSR.sprite = itemDetail.itemSprite;
     }
-
-
-    private void Start()
-    {
-
-    }
-
 }
