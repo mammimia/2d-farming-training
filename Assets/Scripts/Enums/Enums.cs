@@ -30,3 +30,27 @@ public enum Direction
     Up,
     Down
 }
+
+public enum ItemType
+{
+    None,
+    Seed,
+    Crop,
+    Tool,
+    Consumable,
+    Furniture,
+    Resource,
+    Reapable,
+}
+
+public enum ToolType
+{
+    None,
+    Watering,
+    Hoeing,
+    Chopping,
+    Breaking,
+    Reaping,
+    Sickle,
+    Collecting
+}
