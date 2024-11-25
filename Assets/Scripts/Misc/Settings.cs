@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public static class Settings
 {
@@ -28,6 +29,10 @@ public static class Settings
     public static readonly float fadeInDuration = 0.2f;
     public static readonly float fadeOutDuration = 0.35f;
     public static readonly float fadeAlpha = 0.45f;
+
+    // Inventory
+    public static readonly int initialInventorySize = 24;
+    public static readonly int maxInventorySize = 48;
 
     // Helper class for directional hashes
     public class DirectionHashes
