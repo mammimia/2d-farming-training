@@ -15,11 +15,14 @@ public class Player : SingletonMonoBehavior<Player>
     private bool playerInputEnabled = true;
     public bool PlayerInputEnabled { get => playerInputEnabled; set => playerInputEnabled = value; }
 
+    private Camera mainCamera;
+
     protected override void Awake()
     {
         base.Awake();
         theRB = GetComponent<Rigidbody2D>();
         movementSpeed = Settings.WalkingSpeed;
+        mainCamera = Camera.main;
     }
 
     private void Update()
@@ -99,5 +102,10 @@ public class Player : SingletonMonoBehavior<Player>
         movement.Normalize();
         movement *= movementSpeed * Time.fixedDeltaTime;
         theRB.MovePosition(theRB.position + movement);
+    }
+
+    public Vector3 getPlayerViewportPosition()
+    {
+        return mainCamera.WorldToViewportPoint(transform.position);
     }
 }
