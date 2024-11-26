@@ -1,7 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UIInventoryBar : MonoBehaviour
 {
+    [SerializeField] private Sprite blank16x16Sprite;
+    [SerializeField] private UIInventorySlot[] inventorySlots;
+
     private RectTransform rectTransform;
     private bool _isInventoryBarOnTop = true;
 
@@ -19,6 +23,16 @@ public class UIInventoryBar : MonoBehaviour
     private void Update()
     {
         switchInventoryBarPosition();
+    }
+
+    private void OnEnable()
+    {
+        EventHandler.itemAddedToInventoryEvent += itemAddedToInventory;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.itemAddedToInventoryEvent -= itemAddedToInventory;
     }
 
     private void switchInventoryBarPosition()
@@ -42,6 +56,34 @@ public class UIInventoryBar : MonoBehaviour
             rectTransform.anchoredPosition = new Vector2(0, -2.5f);
 
             isInventoryBarOnTop = false;
+        }
+    }
+
+    private void itemAddedToInventory(List<InventoryItem> inventoryItems)
+    {
+        clearInventorySlots();
+
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            if (i >= inventoryItems.Count)
+            {
+                break;
+            }
+
+            inventorySlots[i].inventorySlotImage.sprite = inventoryItems[i].itemDetails.itemSprite;
+            inventorySlots[i].inventorySlotText.text = inventoryItems[i].itemQuantity.ToString();
+            inventorySlots[i].itemDetails = inventoryItems[i].itemDetails;
+            inventorySlots[i].itemQuantity = inventoryItems[i].itemQuantity;
+        }
+    }
+
+    private void clearInventorySlots()
+    {
+        foreach (UIInventorySlot inventorySlot in inventorySlots)
+        {
+            inventorySlot.inventorySlotImage.sprite = blank16x16Sprite;
+            inventorySlot.inventorySlotText.text = "";
+            inventorySlot.itemDetails = null;
         }
     }
 }
