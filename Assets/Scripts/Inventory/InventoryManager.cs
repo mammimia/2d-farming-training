@@ -12,6 +12,17 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
         currentInventorySize = Settings.initialInventorySize;
     }
 
+    public List<InventoryItem> GetInventoryList()
+    {
+        List<InventoryItem> inventoryList = new List<InventoryItem>();
+        foreach (KeyValuePair<int, InventoryItem> inventoryItem in inventory)
+        {
+            inventoryList.Add(inventoryItem.Value);
+        }
+
+        return inventoryList;
+    }
+
     public void addItem(ItemDetails itemDetails)
     {
         if (inventory.Count >= currentInventorySize)
@@ -29,8 +40,11 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
         else
         {
             // Item doesn't exist in inventory, so add it
-            inventory.Add(itemDetails.itemCode, new InventoryItem(itemDetails, 1));
+            int position = inventory.Count;
+            inventory.Add(itemDetails.itemCode, new InventoryItem(itemDetails, 1, position));
         }
+
+        EventHandler.CallItemAddedToInventoryEvent(itemDetails);
     }
 }
 
@@ -38,10 +52,12 @@ public class InventoryItem
 {
     public ItemDetails itemDetails;
     public int itemQuantity;
+    public int position;
 
-    public InventoryItem(ItemDetails itemDetails, int itemQuantity)
+    public InventoryItem(ItemDetails itemDetails, int itemQuantity, int position)
     {
         this.itemDetails = itemDetails;
         this.itemQuantity = itemQuantity;
+        this.position = position;
     }
 }
