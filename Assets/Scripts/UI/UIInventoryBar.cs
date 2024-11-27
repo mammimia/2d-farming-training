@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIInventoryBar : MonoBehaviour
+public class UIInventoryBar : SingletonMonoBehavior<UIInventoryBar>
 {
     [SerializeField] private Sprite blank16x16Sprite;
     [SerializeField] private UIInventorySlot[] inventorySlots;
+    public GameObject draggedItem;
 
     private RectTransform rectTransform;
     private bool _isInventoryBarOnTop = true;
@@ -15,8 +16,9 @@ public class UIInventoryBar : MonoBehaviour
         set => _isInventoryBarOnTop = value;
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         rectTransform = GetComponent<RectTransform>();
     }
 
