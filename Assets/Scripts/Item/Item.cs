@@ -13,7 +13,7 @@ public class Item : MonoBehaviour
 
     private SpriteRenderer theSR;
 
-    private void Awake()
+    private void Start()
     {
         theSR = GetComponentInChildren<SpriteRenderer>();
         theSR.sprite = itemDetail.itemSprite;
