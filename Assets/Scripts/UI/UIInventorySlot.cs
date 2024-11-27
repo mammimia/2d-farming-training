@@ -13,6 +13,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public Image inventorySlotImage;
     public TextMeshProUGUI inventorySlotText;
 
+    [SerializeField] public int slotNumber;
     [HideInInspector] public ItemDetails itemDetails;
     [HideInInspector] public int itemQuantity;
     [SerializeField] private GameObject itemPrefab;
@@ -21,6 +22,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
         mainCamera = Camera.main;
         parentItem = GameObject.FindGameObjectWithTag(Tags.ItemsParent).transform;
+        slotNumber = transform.GetSiblingIndex();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -49,7 +51,8 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         if (isDraggedToInventoryBar)
         {
-
+            int targetSlotNumber = eventData.pointerCurrentRaycast.gameObject.GetComponent<UIInventorySlot>().slotNumber;
+            InventoryManager.Instance.swapInventoryItems(slotNumber, targetSlotNumber);
         }
         else
         {

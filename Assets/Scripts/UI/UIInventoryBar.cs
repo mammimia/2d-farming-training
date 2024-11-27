@@ -29,12 +29,12 @@ public class UIInventoryBar : SingletonMonoBehavior<UIInventoryBar>
 
     private void OnEnable()
     {
-        EventHandler.itemAddedToInventoryEvent += itemAddedToInventory;
+        EventHandler.inventoryUpdateEvent += itemAddedToInventory;
     }
 
     private void OnDisable()
     {
-        EventHandler.itemAddedToInventoryEvent -= itemAddedToInventory;
+        EventHandler.inventoryUpdateEvent -= itemAddedToInventory;
     }
 
     private void switchInventoryBarPosition()
@@ -67,15 +67,14 @@ public class UIInventoryBar : SingletonMonoBehavior<UIInventoryBar>
 
         for (int i = 0; i < inventorySlots.Length; i++)
         {
-            if (i >= inventoryItems.Count)
+            InventoryItem inventoryItem = InventoryManager.Instance.getInventoryItemInSlot(i);
+            if (inventoryItem != null)
             {
-                break;
+                inventorySlots[i].inventorySlotImage.sprite = inventoryItem.itemDetails.itemSprite;
+                inventorySlots[i].inventorySlotText.text = inventoryItem.itemQuantity.ToString();
+                inventorySlots[i].itemDetails = inventoryItem.itemDetails;
+                inventorySlots[i].itemQuantity = inventoryItem.itemQuantity;
             }
-
-            inventorySlots[i].inventorySlotImage.sprite = inventoryItems[i].itemDetails.itemSprite;
-            inventorySlots[i].inventorySlotText.text = inventoryItems[i].itemQuantity.ToString();
-            inventorySlots[i].itemDetails = inventoryItems[i].itemDetails;
-            inventorySlots[i].itemQuantity = inventoryItems[i].itemQuantity;
         }
     }
 

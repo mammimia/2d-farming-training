@@ -44,7 +44,7 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
             inventory.Add(itemDetails.itemCode, new InventoryItem(itemDetails, 1, position));
         }
 
-        EventHandler.CallItemAddedToInventoryEvent(itemDetails);
+        EventHandler.CallInventoryUpdateEvent();
     }
 
     public void removeItem(ItemDetails itemDetails)
@@ -57,7 +57,40 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
             {
                 inventory.Remove(itemDetails.itemCode);
             }
-            EventHandler.CallItemAddedToInventoryEvent(itemDetails);
+            EventHandler.CallInventoryUpdateEvent();
+        }
+    }
+
+    public void swapInventoryItems(int sourceSlotNumber, int destinationSlotNumber)
+    {
+        InventoryItem sourceInventoryItem = getInventoryItemInSlot(sourceSlotNumber);
+        InventoryItem destinationInventoryItem = getInventoryItemInSlot(destinationSlotNumber);
+
+        if (sourceInventoryItem != null) sourceInventoryItem.position = destinationSlotNumber;
+        if (destinationInventoryItem != null) destinationInventoryItem.position = sourceSlotNumber;
+
+        EventHandler.CallInventoryUpdateEvent();
+    }
+
+    public InventoryItem getInventoryItemInSlot(int slotNumber)
+    {
+        foreach (KeyValuePair<int, InventoryItem> inventoryItem in inventory)
+        {
+            if (inventoryItem.Value.position == slotNumber)
+            {
+                return inventoryItem.Value;
+            }
+        }
+
+        return null;
+    }
+
+    private void printInventory()
+    {
+        // TODO: Remove this method after testing
+        foreach (KeyValuePair<int, InventoryItem> inventoryItem in inventory)
+        {
+            Debug.Log("Item code: " + inventoryItem.Value.itemDetails.itemCode + " Item quantity: " + inventoryItem.Value.itemQuantity + " Position: " + inventoryItem.Value.position);
         }
     }
 }

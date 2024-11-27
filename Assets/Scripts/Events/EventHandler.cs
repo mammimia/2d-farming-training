@@ -25,13 +25,13 @@ public static class EventHandler
         }
     }
 
-    public static event Action<List<InventoryItem>> itemAddedToInventoryEvent;
+    public static event Action<List<InventoryItem>> inventoryUpdateEvent;
 
-    public static void CallItemAddedToInventoryEvent(ItemDetails itemDetails)
+    public static void CallInventoryUpdateEvent()
     {
-        if (itemAddedToInventoryEvent != null)
+        if (inventoryUpdateEvent != null)
         {
-            itemAddedToInventoryEvent(InventoryManager.Instance.GetInventoryList());
+            inventoryUpdateEvent(InventoryManager.Instance.GetInventoryList());
         }
     }
 }
