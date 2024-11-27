@@ -46,6 +46,20 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
 
         EventHandler.CallItemAddedToInventoryEvent(itemDetails);
     }
+
+    public void removeItem(ItemDetails itemDetails)
+    {
+        if (inventory.ContainsKey(itemDetails.itemCode))
+        {
+            inventory[itemDetails.itemCode].itemQuantity -= 1;
+
+            if (inventory[itemDetails.itemCode].itemQuantity <= 0)
+            {
+                inventory.Remove(itemDetails.itemCode);
+            }
+            EventHandler.CallItemAddedToInventoryEvent(itemDetails);
+        }
+    }
 }
 
 public class InventoryItem
