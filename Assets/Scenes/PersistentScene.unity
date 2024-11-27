@@ -351,6 +351,7 @@ MonoBehaviour:
   - {fileID: 2080222045}
   - {fileID: 1738986856}
   - {fileID: 1869420285}
+  draggedItem: {fileID: 3748594876806797809, guid: 4181ab9dcb8a84857b3dbbcef7bb4a0a, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,15 +32,15 @@ public class Player : SingletonMonoBehavior<Player>
         {
             handlePlayerInput();
             handlePlayerWalking();
-        }
 
-        EventHandler.CallMovementEvent(
-            inputX, inputY,
-            movementState,
-            toolEffect,
-            toolAction,
-            direction
-        );
+            EventHandler.CallMovementEvent(
+                inputX, inputY,
+                movementState,
+                toolEffect,
+                toolAction,
+                direction
+            );
+        }
     }
 
     private void FixedUpdate()
@@ -107,5 +107,27 @@ public class Player : SingletonMonoBehavior<Player>
     public Vector3 getPlayerViewportPosition()
     {
         return mainCamera.WorldToViewportPoint(transform.position);
+    }
+
+    public void enablePlayerInput()
+    {
+        playerInputEnabled = true;
+    }
+
+    public void disablePlayerInput()
+    {
+        playerInputEnabled = false;
+        inputX = 0f;
+        inputY = 0f;
+        theRB.velocity = Vector2.zero;
+        movementState = MovementState.Idle;
+
+        EventHandler.CallMovementEvent(
+            inputX, inputY,
+            movementState,
+            toolEffect,
+            toolAction,
+            direction
+        );
     }
 }

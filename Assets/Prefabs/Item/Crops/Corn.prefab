@@ -7,26 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 543868717466431356, guid: 0ddee736cd5ea4f07803028c7120599c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 543868717466431356, guid: 0ddee736cd5ea4f07803028c7120599c, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 543868718426726592, guid: 0ddee736cd5ea4f07803028c7120599c, type: 3}
-      propertyPath: m_Size.x
-      value: 0.7743697
-      objectReference: {fileID: 0}
-    - target: {fileID: 543868718426726592, guid: 0ddee736cd5ea4f07803028c7120599c, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.043390512
-      objectReference: {fileID: 0}
-    - target: {fileID: 543868718426726592, guid: 0ddee736cd5ea4f07803028c7120599c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 543868718426726593, guid: 0ddee736cd5ea4f07803028c7120599c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -71,10 +51,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 543868718426726595, guid: 0ddee736cd5ea4f07803028c7120599c, type: 3}
-      propertyPath: itemDetail
-      value: 
-      objectReference: {fileID: 11400000, guid: 3142b534f220a4bbbafdeab3b94ba357, type: 2}
     - target: {fileID: 543868718426726598, guid: 0ddee736cd5ea4f07803028c7120599c, type: 3}
       propertyPath: m_Name
       value: Corn
