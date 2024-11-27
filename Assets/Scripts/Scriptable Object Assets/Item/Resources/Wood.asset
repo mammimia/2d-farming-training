@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485b12561b8334a509ac827f0f4017e1, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  itemCode: 10008
+  itemCode: 10011
   itemType: 6
   itemName: Wood
   itemSprite: {fileID: 21300000, guid: e26dc0d638731ec47abe9c4b3cae62ac, type: 3}

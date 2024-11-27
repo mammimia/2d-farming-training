@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33ef5c01f7be47ce8e6e469796b9c6e, type: 3}
   m_Name: Collecting Tool
   m_EditorClassIdentifier: 
-  itemCode: 10012
+  itemCode: 10020
   itemType: 3
   itemName: Wicker Basket
   itemSprite: {fileID: 21300504, guid: 853ac38383c680342ac7e688bf29b197, type: 3}

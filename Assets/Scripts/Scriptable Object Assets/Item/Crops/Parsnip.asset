@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20b1435379a14ae39243b643597ef42, type: 3}
   m_Name: Parsnip
   m_EditorClassIdentifier: 
-  itemCode: 0
+  itemCode: 10002
   itemType: 2
   itemName: Parsnip
   itemSprite: {fileID: 21300000, guid: 0a1268bf801d5304ebf16458d7309ac1, type: 3}

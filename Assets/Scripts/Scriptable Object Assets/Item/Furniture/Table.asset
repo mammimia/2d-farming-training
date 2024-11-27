@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7eeab9856c2348e8bd9c10971239d5f, type: 3}
   m_Name: Table
   m_EditorClassIdentifier: 
-  itemCode: 10023
+  itemCode: 10005
   itemType: 5
   itemName: Table
   itemSprite: {fileID: 21300000, guid: 60f7a57556be87841a8cabc94054df28, type: 3}

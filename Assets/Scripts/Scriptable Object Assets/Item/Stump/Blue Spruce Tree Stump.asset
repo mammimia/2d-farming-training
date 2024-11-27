@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d03876a5248e4e3ab20c4e2a75a9caf, type: 3}
   m_Name: Blue Spruce Tree Stump
   m_EditorClassIdentifier: 
-  itemCode: 10011
+  itemCode: 10014
   itemType: 1
   itemName: Blue Spruce Pine Cone
   itemSprite: {fileID: -341119608263849502, guid: 5d22327a2a3d2a049a8a59a708d527fe, type: 3}

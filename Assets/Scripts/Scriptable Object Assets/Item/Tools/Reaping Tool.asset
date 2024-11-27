@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33ef5c01f7be47ce8e6e469796b9c6e, type: 3}
   m_Name: Reaping Tool
   m_EditorClassIdentifier: 
-  itemCode: 10017
+  itemCode: 10022
   itemType: 3
   itemName: A Basic Scythe For Reaping
   itemSprite: {fileID: 21300506, guid: 853ac38383c680342ac7e688bf29b197, type: 3}

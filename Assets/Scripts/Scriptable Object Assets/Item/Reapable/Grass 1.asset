@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8159aac338a0b4bf3ba554c722f734e7, type: 3}
   m_Name: Grass 1
   m_EditorClassIdentifier: 
-  itemCode: 10018
+  itemCode: 10006
   itemType: 7
   itemName: Grass 1
   itemSprite: {fileID: 21300000, guid: 207ad99171e171b418bcaaa396d5a6f6, type: 3}

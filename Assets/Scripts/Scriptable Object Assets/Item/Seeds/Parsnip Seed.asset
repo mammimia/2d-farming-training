@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99add8754f9e549899a59d4646ee2ea8, type: 3}
   m_Name: Parsnip Seed
   m_EditorClassIdentifier: 
-  itemCode: 10006
+  itemCode: 10013
   itemType: 1
   itemName: Parsnip Seed
   itemSprite: {fileID: 21300000, guid: 0a1268bf801d5304ebf16458d7309ac1, type: 3}

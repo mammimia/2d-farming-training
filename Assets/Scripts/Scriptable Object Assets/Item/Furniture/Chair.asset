@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7eeab9856c2348e8bd9c10971239d5f, type: 3}
   m_Name: Chair
   m_EditorClassIdentifier: 
-  itemCode: 10022
+  itemCode: 10004
   itemType: 5
   itemName: Chair
   itemSprite: {fileID: 21300000, guid: 2a61f48c8f2dfed4da6f2f8e2485ee15, type: 3}

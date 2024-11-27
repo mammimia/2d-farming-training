@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33ef5c01f7be47ce8e6e469796b9c6e, type: 3}
   m_Name: Breaking Tool
   m_EditorClassIdentifier: 
-  itemCode: 0
+  itemCode: 10018
   itemType: 3
   itemName: A Basic Pickaxe
   itemSprite: {fileID: 0}

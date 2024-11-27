@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d03876a5248e4e3ab20c4e2a75a9caf, type: 3}
   m_Name: Canyon Oak Tree Stump
   m_EditorClassIdentifier: 
-  itemCode: 10010
+  itemCode: 10015
   itemType: 1
   itemName: Canyon Oak Tree Stump
   itemSprite: {fileID: 7154603021615155856, guid: d241c496741a12d4290e12ba81dd6724, type: 3}
