@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bounds Confiner
+  - Items Parent
   layers:
   - Default
   - TransparentFX
