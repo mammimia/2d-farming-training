@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory Slot 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7335781126200673616, guid: 36b46d818447349c8b646237148cb01e, type: 3}
+      propertyPath: slotNumber
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b46d818447349c8b646237148cb01e, type: 3}
 --- !u!224 &94807371 stripped
@@ -352,6 +356,7 @@ MonoBehaviour:
   - {fileID: 1738986856}
   - {fileID: 1869420285}
   draggedItem: {fileID: 3748594876806797809, guid: 4181ab9dcb8a84857b3dbbcef7bb4a0a, type: 3}
+  itemDetailsTextBoxGameObject: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +624,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory Slot 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7335781126200673616, guid: 36b46d818447349c8b646237148cb01e, type: 3}
+      propertyPath: slotNumber
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b46d818447349c8b646237148cb01e, type: 3}
 --- !u!224 &740119360 stripped
@@ -732,6 +741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory Slot 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7335781126200673616, guid: 36b46d818447349c8b646237148cb01e, type: 3}
+      propertyPath: slotNumber
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b46d818447349c8b646237148cb01e, type: 3}
 --- !u!224 &748168248 stripped
@@ -844,6 +857,10 @@ PrefabInstance:
     - target: {fileID: 790612088296792141, guid: 36b46d818447349c8b646237148cb01e, type: 3}
       propertyPath: m_Name
       value: Inventory Slot 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335781126200673616, guid: 36b46d818447349c8b646237148cb01e, type: 3}
+      propertyPath: slotNumber
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b46d818447349c8b646237148cb01e, type: 3}
@@ -1148,6 +1165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory Slot 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7335781126200673616, guid: 36b46d818447349c8b646237148cb01e, type: 3}
+      propertyPath: slotNumber
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b46d818447349c8b646237148cb01e, type: 3}
 --- !u!224 &1076585186 stripped
@@ -1435,6 +1456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory Slot 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7335781126200673616, guid: 36b46d818447349c8b646237148cb01e, type: 3}
+      propertyPath: slotNumber
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b46d818447349c8b646237148cb01e, type: 3}
 --- !u!224 &1486096123 stripped
@@ -1657,6 +1682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory Slot 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7335781126200673616, guid: 36b46d818447349c8b646237148cb01e, type: 3}
+      propertyPath: slotNumber
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b46d818447349c8b646237148cb01e, type: 3}
 --- !u!224 &1738986855 stripped
@@ -1769,6 +1798,10 @@ PrefabInstance:
     - target: {fileID: 790612088296792141, guid: 36b46d818447349c8b646237148cb01e, type: 3}
       propertyPath: m_Name
       value: Inventory Slot 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335781126200673616, guid: 36b46d818447349c8b646237148cb01e, type: 3}
+      propertyPath: slotNumber
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b46d818447349c8b646237148cb01e, type: 3}
@@ -1883,6 +1916,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory Slot 11
       objectReference: {fileID: 0}
+    - target: {fileID: 7335781126200673616, guid: 36b46d818447349c8b646237148cb01e, type: 3}
+      propertyPath: slotNumber
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b46d818447349c8b646237148cb01e, type: 3}
 --- !u!224 &1869420284 stripped
@@ -1996,6 +2033,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory Slot 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7335781126200673616, guid: 36b46d818447349c8b646237148cb01e, type: 3}
+      propertyPath: slotNumber
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b46d818447349c8b646237148cb01e, type: 3}
 --- !u!224 &1977933849 stripped
@@ -2108,6 +2149,10 @@ PrefabInstance:
     - target: {fileID: 790612088296792141, guid: 36b46d818447349c8b646237148cb01e, type: 3}
       propertyPath: m_Name
       value: Inventory Slot 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335781126200673616, guid: 36b46d818447349c8b646237148cb01e, type: 3}
+      propertyPath: slotNumber
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b46d818447349c8b646237148cb01e, type: 3}

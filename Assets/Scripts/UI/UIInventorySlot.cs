@@ -3,9 +3,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Camera mainCamera;
+    private Canvas parentCanvas;
     private Transform parentItem;
     private GameObject draggedItem;
 
@@ -17,6 +18,12 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     [HideInInspector] public ItemDetails itemDetails;
     [HideInInspector] public int itemQuantity;
     [SerializeField] private GameObject itemPrefab;
+    [SerializeField] private GameObject itemDetailsTextBoxPrefab;
+
+    private void Awake()
+    {
+        parentCanvas = GetComponentInParent<Canvas>();
+    }
 
     private void Start()
     {
@@ -76,5 +83,35 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         item.ItemDetail = itemDetails;
 
         InventoryManager.Instance.removeItem(itemDetails);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (itemDetails == null) return;
+
+        UIInventoryBar.Instance.itemDetailsTextBoxGameObject = Instantiate(itemDetailsTextBoxPrefab, transform.position, Quaternion.identity);
+        UIInventoryBar.Instance.itemDetailsTextBoxGameObject.transform.SetParent(parentCanvas.transform, false);
+
+        UIInventoryTextBox inventoryTextBox = UIInventoryBar.Instance.itemDetailsTextBoxGameObject.GetComponent<UIInventoryTextBox>();
+        inventoryTextBox.SetItemDetails(itemDetails);
+
+        if (UIInventoryBar.Instance.isInventoryBarOnTop)
+        {
+            UIInventoryBar.Instance.itemDetailsTextBoxGameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 1f);
+            UIInventoryBar.Instance.itemDetailsTextBoxGameObject.transform.position = new Vector3(transform.position.x, transform.position.y + 150f, transform.position.z);
+        }
+        else
+        {
+            UIInventoryBar.Instance.itemDetailsTextBoxGameObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0f);
+            UIInventoryBar.Instance.itemDetailsTextBoxGameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 150f, transform.position.z);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (UIInventoryBar.Instance.itemDetailsTextBoxGameObject != null)
+        {
+            Destroy(UIInventoryBar.Instance.itemDetailsTextBoxGameObject);
+        }
     }
 }

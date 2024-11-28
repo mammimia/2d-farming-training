@@ -10,7 +10,9 @@ public class UIInventoryBar : SingletonMonoBehavior<UIInventoryBar>
     private RectTransform rectTransform;
     private bool _isInventoryBarOnTop = true;
 
-    private bool isInventoryBarOnTop
+    [HideInInspector] public GameObject itemDetailsTextBoxGameObject;
+
+    public bool isInventoryBarOnTop
     {
         get => _isInventoryBarOnTop;
         set => _isInventoryBarOnTop = value;

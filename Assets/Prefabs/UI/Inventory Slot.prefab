@@ -318,6 +318,8 @@ MonoBehaviour:
   inventorySlotHighlight: {fileID: 790612087536890899}
   inventorySlotImage: {fileID: 790612088296792136}
   inventorySlotText: {fileID: 790612087410925271}
+  slotNumber: 0
   itemDetails: {fileID: 0}
   itemQuantity: 0
   itemPrefab: {fileID: 543868718426726598, guid: 0ddee736cd5ea4f07803028c7120599c, type: 3}
+  itemDetailsTextBoxPrefab: {fileID: 1211583534632809485, guid: c920d5b6a674240f683dca80110c9065, type: 3}
