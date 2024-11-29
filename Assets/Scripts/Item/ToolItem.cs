@@ -11,6 +11,5 @@ public class ToolItem : ItemDetails
         itemType = ItemType.Tool;
         itemUseGridRadius = 1;
         canPickedUp = true;
-        isStartingItem = true;
     }
 }
