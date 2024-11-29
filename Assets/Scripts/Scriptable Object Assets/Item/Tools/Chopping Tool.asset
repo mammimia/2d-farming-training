@@ -16,10 +16,9 @@ MonoBehaviour:
   itemType: 3
   itemName: A Basic Axe
   itemSprite: {fileID: 21300010, guid: 853ac38383c680342ac7e688bf29b197, type: 3}
-  itemDescription: 
+  itemDescription: Used to cut down trees and chop wood.
   itemUseGridRadius: 1
   itemUseRadius: 0
-  isStartingItem: 1
   canPickedUp: 1
   canBeDropped: 0
   canBeCarried: 0

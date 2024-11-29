@@ -16,10 +16,9 @@ MonoBehaviour:
   itemType: 6
   itemName: Wood
   itemSprite: {fileID: 21300000, guid: e26dc0d638731ec47abe9c4b3cae62ac, type: 3}
-  itemDescription: 
+  itemDescription: Useful for building and creating tools.
   itemUseGridRadius: 2
   itemUseRadius: 0
-  isStartingItem: 0
   canPickedUp: 1
   canBeDropped: 1
   canBeCarried: 1

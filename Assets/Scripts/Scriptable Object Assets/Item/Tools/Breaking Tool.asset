@@ -16,7 +16,7 @@ MonoBehaviour:
   itemType: 3
   itemName: A Basic Pickaxe
   itemSprite: {fileID: 21300094, guid: 853ac38383c680342ac7e688bf29b197, type: 3}
-  itemDescription: 
+  itemDescription: Breaks apart stones and uncovers resources.
   itemUseGridRadius: 1
   itemUseRadius: 0
   canPickedUp: 1

@@ -16,10 +16,9 @@ MonoBehaviour:
   itemType: 2
   itemName: Parsnip
   itemSprite: {fileID: 21300000, guid: 0a1268bf801d5304ebf16458d7309ac1, type: 3}
-  itemDescription: 
+  itemDescription: A crisp root vegetable perfect for stews.
   itemUseGridRadius: 2
   itemUseRadius: 0
-  isStartingItem: 0
   canPickedUp: 1
   canBeDropped: 1
   canBeCarried: 1

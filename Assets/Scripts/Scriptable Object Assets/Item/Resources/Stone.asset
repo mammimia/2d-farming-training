@@ -16,10 +16,9 @@ MonoBehaviour:
   itemType: 6
   itemName: Stone
   itemSprite: {fileID: 21300000, guid: 7700e9e59e6f58e4598ea8f2e5a84cc1, type: 3}
-  itemDescription: 
+  itemDescription: Essential for crafting and sturdy construction.
   itemUseGridRadius: 2
   itemUseRadius: 0
-  isStartingItem: 0
   canPickedUp: 1
   canBeDropped: 1
   canBeCarried: 1
