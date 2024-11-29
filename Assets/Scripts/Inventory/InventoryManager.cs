@@ -84,15 +84,6 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
 
         return null;
     }
-
-    private void printInventory()
-    {
-        // TODO: Remove this method after testing
-        foreach (KeyValuePair<int, InventoryItem> inventoryItem in inventory)
-        {
-            Debug.Log("Item code: " + inventoryItem.Value.itemDetails.itemCode + " Item quantity: " + inventoryItem.Value.itemQuantity + " Position: " + inventoryItem.Value.position);
-        }
-    }
 }
 
 public class InventoryItem

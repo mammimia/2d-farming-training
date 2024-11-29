@@ -9,7 +9,6 @@ public class ItemDetails : ScriptableObject
     public string itemDescription;
     public short itemUseGridRadius;
     public float itemUseRadius;
-    public bool isStartingItem;
     public bool canPickedUp;
     public bool canBeDropped;
     public bool canBeCarried;
