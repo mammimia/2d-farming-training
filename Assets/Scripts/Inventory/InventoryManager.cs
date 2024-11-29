@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InventoryManager : SingletonMonoBehavior<InventoryManager>
@@ -42,11 +43,27 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
         else
         {
             // Item doesn't exist in inventory, so add it
-            int position = inventory.Count;
+            // Find the first available slot according to InventoryItem.position
+            int position = findFirstAvailableSlot();
+
             inventory.Add(itemDetails.itemCode, new InventoryItem(itemDetails, 1, position));
         }
 
         EventHandler.CallInventoryUpdateEvent();
+    }
+
+    private int findFirstAvailableSlot()
+    {
+        int position = 0;
+
+        HashSet<int> usedPositions = inventory.Values.Select(x => x.position).ToHashSet();
+
+        while (usedPositions.Contains(position))
+        {
+            position++;
+        }
+
+        return position;
     }
 
     public void removeItem(ItemDetails itemDetails)
