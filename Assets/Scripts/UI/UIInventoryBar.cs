@@ -89,4 +89,30 @@ public class UIInventoryBar : SingletonMonoBehavior<UIInventoryBar>
             inventorySlot.itemDetails = null;
         }
     }
+
+    public void clearSlotHighlights()
+    {
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            inventorySlots[i].isSelected = false;
+            inventorySlots[i].inventorySlotHighlight.color = new Color(0f, 0f, 0f, 0f);
+        }
+    }
+
+    public void activateSlotHighlights(int slotNumber)
+    {
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            if (i == slotNumber)
+            {
+                inventorySlots[i].isSelected = true;
+                inventorySlots[i].inventorySlotHighlight.color = new Color(1f, 1f, 1f, 1f);
+            }
+            else
+            {
+                inventorySlots[i].isSelected = false;
+                inventorySlots[i].inventorySlotHighlight.color = new Color(0f, 0f, 0f, 0f);
+            }
+        }
+    }
 }

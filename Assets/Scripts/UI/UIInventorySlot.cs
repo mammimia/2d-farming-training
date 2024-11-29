@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Camera mainCamera;
     private Canvas parentCanvas;
@@ -19,6 +19,8 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     [HideInInspector] public int itemQuantity;
     [SerializeField] private GameObject itemPrefab;
     [SerializeField] private GameObject itemDetailsTextBoxPrefab;
+
+    [HideInInspector] public bool isSelected = false;
 
     private void Awake()
     {
@@ -40,6 +42,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         // Debug transform.position
         draggedItem = Instantiate(UIInventoryBar.Instance.draggedItem, UIInventoryBar.Instance.transform);
         draggedItem.GetComponentInChildren<Image>().sprite = inventorySlotImage.sprite;
+        UIInventoryBar.Instance.activateSlotHighlights(slotNumber);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -60,6 +63,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         {
             int targetSlotNumber = eventData.pointerCurrentRaycast.gameObject.GetComponent<UIInventorySlot>().slotNumber;
             InventoryManager.Instance.swapInventoryItems(slotNumber, targetSlotNumber);
+            UIInventoryBar.Instance.clearSlotHighlights();
         }
         else
         {
@@ -112,6 +116,23 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         if (UIInventoryBar.Instance.itemDetailsTextBoxGameObject != null)
         {
             Destroy(UIInventoryBar.Instance.itemDetailsTextBoxGameObject);
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            if (isSelected)
+            {
+                InventoryManager.Instance.clearSelectedItem();
+                UIInventoryBar.Instance.clearSlotHighlights();
+            }
+            else
+            {
+                InventoryManager.Instance.selectItemSlot(slotNumber);
+                UIInventoryBar.Instance.activateSlotHighlights(slotNumber);
+            }
         }
     }
 }

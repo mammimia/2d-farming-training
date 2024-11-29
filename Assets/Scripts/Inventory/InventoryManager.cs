@@ -7,6 +7,8 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
 
     private int currentInventorySize;
 
+    private int selectedItemSlot = -1;
+
     private void Start()
     {
         currentInventorySize = Settings.initialInventorySize;
@@ -56,6 +58,7 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
             if (inventory[itemDetails.itemCode].itemQuantity <= 0)
             {
                 inventory.Remove(itemDetails.itemCode);
+                UIInventoryBar.Instance.clearSlotHighlights();
             }
             EventHandler.CallInventoryUpdateEvent();
         }
@@ -83,6 +86,16 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
         }
 
         return null;
+    }
+
+    public void selectItemSlot(int slotNumber)
+    {
+        selectedItemSlot = slotNumber;
+    }
+
+    public void clearSelectedItem()
+    {
+        selectedItemSlot = -1;
     }
 }
 
