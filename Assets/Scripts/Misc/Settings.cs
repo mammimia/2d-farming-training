@@ -34,6 +34,9 @@ public static class Settings
     public static readonly int initialInventorySize = 24;
     public static readonly int maxInventorySize = 48;
 
+    // Time System
+    public static readonly float secondsPerGameSecond = 0.012f;
+
     // Helper class for directional hashes
     public class DirectionHashes
     {

@@ -54,3 +54,24 @@ public enum ToolType
     Sickle,
     Collecting
 }
+
+public enum Season
+{
+    None,
+    Spring,
+    Summer,
+    Autumn,
+    Winter
+}
+
+public enum DayOfTheWeek
+{
+    None,
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
