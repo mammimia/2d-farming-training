@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeManager : SingletonMonoBehavior<TimeManager>
 {
-    private GameTime currentTime = new GameTime(Season.Spring, 1, 1, 6, 0, 0);
+    private GameTime currentTime = new GameTime(1, 6, 1, 6, 0, 0);
     private bool isPaused = false;
     private float gameTick = 0f;
 
