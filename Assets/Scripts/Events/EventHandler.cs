@@ -82,5 +82,41 @@ public static class EventHandler
         }
     }
 
+    public static event Action sceneFadeOutEvent;
+    public static void CallSceneFadeOutEvent()
+    {
+        if (sceneFadeOutEvent != null)
+        {
+            sceneFadeOutEvent();
+        }
+    }
+
+    public static event Action beforeSceneUnloadEvent;
+    public static void CallBeforeSceneUnloadEvent()
+    {
+        if (beforeSceneUnloadEvent != null)
+        {
+            beforeSceneUnloadEvent();
+        }
+    }
+
+    public static event Action afterSceneLoadEvent;
+    public static void CallAfterSceneLoadEvent()
+    {
+        if (afterSceneLoadEvent != null)
+        {
+            afterSceneLoadEvent();
+        }
+    }
+
+    public static event Action sceneFadeInEvent;
+    public static void CallSceneFadeInEvent()
+    {
+        if (sceneFadeInEvent != null)
+        {
+            sceneFadeInEvent();
+        }
+    }
+
 
 }
