@@ -27,11 +27,25 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         parentCanvas = GetComponentInParent<Canvas>();
     }
 
+    private void OnEnable()
+    {
+        EventHandler.afterSceneLoadEvent += SceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.afterSceneLoadEvent -= SceneLoaded;
+    }
+
+    private void SceneLoaded()
+    {
+        parentItem = GameObject.FindGameObjectWithTag(Tags.ItemsParent).transform;
+        slotNumber = transform.GetSiblingIndex();
+    }
+
     private void Start()
     {
         mainCamera = Camera.main;
-        parentItem = GameObject.FindGameObjectWithTag(Tags.ItemsParent).transform;
-        slotNumber = transform.GetSiblingIndex();
     }
 
     public void OnBeginDrag(PointerEventData eventData)

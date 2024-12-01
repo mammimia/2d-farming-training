@@ -4,10 +4,14 @@ using System.Diagnostics;
 
 public class ConfinerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        SwitchConfiner();
+        EventHandler.afterSceneLoadEvent += SwitchConfiner;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.afterSceneLoadEvent -= SwitchConfiner;
     }
 
     private void SwitchConfiner()
